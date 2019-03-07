@@ -1,11 +1,12 @@
 # Scriptastic
-Scripting for Second Life and Opensim on a web page - Like Scratch, but with no download needed
+Scripting for Opensim on a web page - Like Scratch, but with no download needed
+
+Testin insert OSSL.
 
 ==========================================
 GET STARTED
 ==========================================
-* Put this directory in your root web directory (or a sub directory) so that it is accessable from a web URL
-* ENJOY !
+* open default.html in browser
 
 ==========================================
 NOTES
