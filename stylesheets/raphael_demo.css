@@ -9,6 +9,56 @@
 .functions{ border-color: hsl(264,62%,72%); }
 .functions > .block{ background-color: hsl(264,32%,75%); }
 
+/* Manni */
+.avatars{ border-color: hsl(264,62%,72%); }
+.avatars > .block{ background-color: hsl(100,32%,75%); }
+
+.npcs{ border-color: hsl(264,62%,72%); }
+.npcs > .block{ background-color: hsl(200,10%,50%); }
+
+.drawing{ border-color: hsl(264,62%,72%); }
+.drawing > .block{ background-color: hsl(300,32%,75%); }
+
+.notecard{ border-color: hsl(264,62%,72%); }
+.notecard > .block{ background-color: hsl(400,32%,75%); }
+
+.terrain{ border-color: hsl(264,62%,72%); }
+.terrain > .block{ background-color: hsl(500,32%,75%); }
+
+.administration{ border-color: hsl(264,62%,72%); }
+.administration > .block{ background-color: hsl(600,32%,75%); }
+
+.Misc{ border-color: hsl(264,62%,72%); }
+.Misc > .block{ background-color: hsl(264,32%,75%); }
+
+.manipulation{ border-color: hsl(264,62%,72%); }
+.manipulation > .block{ background-color: hsl(700,32%,75%); }
+
+.sound{ border-color: hsl(264,62%,72%); }
+.sound > .block{ background-color: hsl(800,32%,75%); }
+
+.http{ border-color: hsl(264,62%,72%); }
+.http > .block{ background-color: hsl(900,32%,75%); }
+
+.parcel{ border-color: hsl(264,62%,72%); }
+.parcel > .block{ background-color: hsl(555,32%,75%); }
+
+.windlight{ border-color: hsl(264,62%,72%); }
+.windlight > .block{ background-color: hsl(444,32%,75%); }
+
+.gridregion{ border-color: hsl(264,62%,72%); }
+.gridregion > .block{ background-color: hsl(333,32%,75%); }
+
+.permissions{ border-color: hsl(264,62%,72%); }
+.permissions > .block{ background-color: hsl(666,32%,75%); }
+
+.string{ border-color: hsl(264,62%,72%); }
+.string > .block{ background-color: hsl(777,32%,75%); }
+
+.misc{ border-color: hsl(264,62%,72%); }
+.misc > .block{ background-color: hsl(888,32%,75%); }
+
+/* Manni Ende */
 
 .chat{ border-color: hsl(264,62%,72%); }
 .chat > .block{ background-color: hsl(264,80%,95%); }
