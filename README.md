@@ -6,7 +6,7 @@ Testing insert OSSL.
 
 # GET STARTED
 
-* open default.html in browser
+* open default.html in your browser
 
 
 # NOTES
