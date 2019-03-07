@@ -1,16 +1,16 @@
 # Scriptastic
 Scripting for Opensim on a web page - Like Scratch, but with no download needed
 
-Testin insert OSSL.
+Testing insert OSSL.
 
-==========================================
-GET STARTED
-==========================================
+
+# GET STARTED
+
 * open default.html in browser
 
-==========================================
-NOTES
-==========================================
+
+# NOTES
+
 * Scriptastic is based on the Waterbear project - http://waterbearlang.com
 * index.html - contains the main interface
 * scripts/raphael_demo.js  - contains the Block Definition & Syntax
