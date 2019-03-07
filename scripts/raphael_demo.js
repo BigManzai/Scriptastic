@@ -79,13 +79,13 @@ window.choice_lists = {
 var menus = {
     events: menu('Events', [
         {
-            label: 'When script is reset',
+            label: 'Wenn das Skript zurückgesetzt wird',
             trigger: true,
-            script: ' state_entry(){ // this happens when the script is reset \n[[next]]\n }\n'
+            script: ' state_entry(){ // Dies geschieht, wenn das Skript zurückgesetzt wird. \n[[next]]\n }\n'
          },{
-            label: 'When object is rezzed',
+            label: 'Wenn das Objekt gerezzd ist',
             trigger: true,
-            script: ' on_rez(integer param){ // this object has been rezzed\n[[next]]\n }\n'
+            script: ' on_rez(integer param){ // Wenn das Objekt gerezzd ist\n[[next]]\n }\n'
          },{
             label: 'When attached',
             trigger: true,
@@ -376,9 +376,850 @@ var menus = {
         },{
             label: 'vector [string:Variable] = [string:<1,2,3>]',
             script: '  vector {{1}} = {{2}}; // Declare a variable that hold the vector {{2}}\n'
+        },{
+            label: 'Os Loop Sound named [string:SomeSoundName]',
+            script: '  osLoopSound(integer: linknum, "{{1}}", float: volume);//  Klangdatei in einer Schleife abspielen\n'
         }
 
+     ]),
+	 
+    functions: menu('Avatars', [
+		{
+            label: 'osAgentSaveAppearance [string:Variable]',
+            script: '  osAgentSaveAppearance();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osAvatarName2Key [string:Variable]',
+            script: '  osAvatarName2Key();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osAvatarPlayAnimation [string:Variable]',
+            script: '  osAvatarPlayAnimation();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osAvatarStopAnimation [string:Variable]',
+            script: '  osAvatarStopAnimation();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osCauseDamage [string:Variable]',
+            script: '  osCauseDamage();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osCauseHealing [string:Variable]',
+            script: '  osCauseHealing();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osDetectedCountry [string:Variable]',
+            script: '  osDetectedCountry();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osDropAttachment [string:Variable]',
+            script: '  osDropAttachment();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osDropAttachmentAt [string:Variable]',
+            script: '  osDropAttachmentAt();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osEjectFromGroup [string:Variable]',
+            script: '  osEjectFromGroup();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osForceAttachToAvatar [string:Variable]',
+            script: '  osForceAttachToAvatar();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osForceAttachToAvatarFromInventory [string:Variable]',
+            script: '  osForceAttachToAvatarFromInventory();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osForceAttachToOtherAvatarFromInventory [string:Variable]',
+            script: '  osForceAttachToOtherAvatarFromInventory();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osForceDetachFromAvatar [string:Variable]',
+            script: '  osForceDetachFromAvatar();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osForceDropAttachment [string:Variable]',
+            script: '  osForceDropAttachment();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osForceDropAttachmentAt [string:Variable]',
+            script: '  osForceDropAttachmentAt();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osForceOtherSit [string:Variable]',
+            script: '  osForceOtherSit();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetAgentIP [string:Variable]',
+            script: '  osGetAgentIP();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetAgents [string:Variable]',
+            script: '  osGetAgents();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetAgentCountry [string:Variable]',
+            script: '  osGetAgentCountry();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osGetAvatarHomeURI [string:Variable]',
+            script: '  osGetAvatarHomeURI();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetAvatarList [string:Variable]',
+            script: '  osGetAvatarList();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetGender [string:Variable]',
+            script: '  osGetGender();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetHealRate [string:Variable]',
+            script: '  osGetHealRate();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osGetHealth( [string:Variable]',
+            script: '  osGetHealth();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetNumberOfAttachments [string:Variable]',
+            script: '  osGetNumberOfAttachments();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osInviteToGroup [string:Variable]',
+            script: '  osInviteToGroup();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osKickAvatar [string:Variable]',
+            script: '  osKickAvatar();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osOwnerSaveAppearance [string:Variable]',
+            script: '  osOwnerSaveAppearance();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetHealRate [string:Variable]',
+            script: '  osSetHealRate();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osSetHealth [string:Variable]',
+            script: '  osSetHealth();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osSetOwnerSpeed [string:Variable]',
+            script: '  osSetOwnerSpeed();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osSetSpeed [string:Variable]',
+            script: '  osSetSpeed();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osTeleportAgent [string:Variable]',
+            script: '  osTeleportAgent();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osTeleportOwner [string:Variable]',
+            script: '  osTeleportOwner();//  Erklaerung im Skript\n'
+        }
+
+     ]),
+
+    functions: menu('NPCs', [
+		{
+            label: 'osIsNpc [string:Variable]',
+            script: '  osIsNpc();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osNpcCreate [string:Variable]',
+            script: '  osNpcCreate();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetNpcList [string:Variable]',
+            script: '  osGetNpcList();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osNpcGetPos [string:Variable]',
+            script: '  osNpcGetPos();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osNpcGetRot [string:Variable]',
+            script: '  osNpcGetRot();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osNpcGetOwner [string:Variable]',
+            script: '  osNpcGetOwner();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osNpcLoadAppearance [string:Variable]',
+            script: '  osNpcLoadAppearance();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osNpcMoveTo [string:Variable]',
+            script: '  osNpcMoveTo();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osNpcMoveToTarget [string:Variable]',
+            script: '  osNpcMoveToTarget();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osNpcPlayAnimation [string:Variable]',
+            script: '  osNpcPlayAnimation();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osNpcRemove [string:Variable]',
+            script: '  osNpcRemove();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osNpcSaveAppearance [string:Variable]',
+            script: '  osNpcSaveAppearance();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osNpcSay [string:Variable]',
+            script: '  osNpcSay();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osNpcSayTo [string:Variable]',
+            script: '  osNpcSayTo();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osNpcSetProfileAbout [string:Variable]',
+            script: '  osNpcSetProfileAbout();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osNpcSetProfileImage [string:Variable]',
+            script: '  osNpcSetProfileImage();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osNpcSetRot [string:Variable]',
+            script: '  osNpcSetRot();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osNpcShout [string:Variable]',
+            script: '  osNpcShout();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osNpcSit [string:Variable]',
+            script: '  osNpcSit();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osNpcStand [string:Variable]',
+            script: '  osNpcStand();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osNpcStopMoveToTarget [string:Variable]',
+            script: '  osNpcStopMoveToTarget();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osNpcStopAnimation [string:Variable]',
+            script: '  osNpcStopAnimation();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osNpcTouch [string:Variable]',
+            script: '  osNpcTouch();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osNpcWhisper [string:Variable]',
+            script: '  osNpcWhisper();//  Erklaerung im Skript\n'
+        }
+     ]),
+	 
+    functions: menu('Manipulation', [
+
+		{
+            label: 'osClearInertia [string:Variable]',
+            script: '  osClearInertia();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osForceBreakAllLinks [string:Variable]',
+            script: '  osForceBreakAllLinks();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osForceBreakLink [string:Variable]',
+            script: '  osForceBreakLink();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osForceCreateLink [string:Variable]',
+            script: '  osForceCreateLink();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetInertiaData [string:Variable]',
+            script: '  osGetInertiaData();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osGetInventoryName [string:Variable]',
+            script: '  osGetInventoryName();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osGetInventoryDesc [string:Variable]',
+            script: '  osGetInventoryDesc();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetInventoryLastOwner [string:Variable]',
+            script: '  osGetInventoryLastOwner();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osGetLastChangedEventKey [string:Variable]',
+            script: '  osGetLastChangedEventKey();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osGetLinkNumber [string:Variable]',
+            script: '  osGetLinkNumber();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osGetLinkPrimitiveParams [string:Variable]',
+            script: '  osGetLinkPrimitiveParams();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osGetPrimitiveParams [string:Variable]',
+            script: '  osGetPrimitiveParams();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetRezzingObject [string:Variable]',
+            script: '  osGetRezzingObject();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osListenRegex [string:Variable]',
+            script: '  osListenRegex();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osMessageAttachments [string:Variable]',
+            script: '  osMessageAttachments();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osMessageObject [string:Variable]',
+            script: '  osMessageObject();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetInertia [string:Variable]',
+            script: '  osSetInertia();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osSetInertiaAsBox [string:Variable]',
+            script: '  osSetInertiaAsBox();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osSetInertiaAsCylinder [string:Variable]',
+            script: '  osSetInertiaAsCylinder();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osSetInertiaAsSphere [string:Variable]',
+            script: '  osSetInertiaAsSphere();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osSetPrimitiveParams [string:Variable]',
+            script: '  osSetPrimitiveParams();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetProjectionParams [string:Variable]',
+            script: '  osSetProjectionParams();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osTeleportObject [string:Variable]',
+            script: '  osTeleportObject();//  Erklaerung im Skript\n'
+        }
+     ]),
+	 
+    functions: menu('Drawing', [
+		{
+            label: 'osDrawEllipse [string:Variable]',
+            script: '  osDrawEllipse();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osDrawFilledEllipse [string:Variable]',
+            script: '  osDrawFilledEllipse();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osDrawFilledPolygon [string:Variable]',
+            script: '  osDrawFilledPolygon();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osDrawFilledRectangle [string:Variable]',
+            script: '  osDrawFilledRectangle();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osDrawImage [string:Variable]',
+            script: '  osDrawImage();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osDrawLine [string:Variable]',
+            script: '  osDrawLine();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osDrawPolygon [string:Variable]',
+            script: '  osDrawPolygon();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osDrawRectangle [string:Variable]',
+            script: '  osDrawRectangle();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osDrawResetTransform [string:Variable]',
+            script: '  osDrawResetTransform();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'Os Erklaerung [string:Variable]',
+            script: '  osDrawRotationTransform();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osDrawScaleTransform [string:Variable]',
+            script: '  osDrawScaleTransform();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osDrawText [string:Variable]',
+            script: '  osDrawText();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osDrawTranslationTransform [string:Variable]',
+            script: '  osDrawTranslationTransform();//  Erklaerung im Skript\n'
+        },  
+		{
+            label: 'osGetDrawStringSize [string:Variable]',
+            script: '  osGetDrawStringSize();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osMovePen [string:Variable]',
+            script: '  osMovePen();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetFontName [string:Variable]',
+            script: '  osSetFontName();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetFontSize [string:Variable]',
+            script: '  osSetFontSize();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetPenCap [string:Variable]',
+            script: '  osSetPenCap();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetPenColor [string:Variable]',
+            script: '  osSetPenColor();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetPenSize [string:Variable]',
+            script: '  osSetPenSize();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetDynamicTextureData [string:Variable]',
+            script: '  osSetDynamicTextureData();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetDynamicTextureDataBlend [string:Variable]',
+            script: '  osSetDynamicTextureDataBlend();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetDynamicTextureDataBlendFace [string:Variable]',
+            script: '  osSetDynamicTextureDataBlendFace();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetDynamicTextureDataFace [string:Variable]',
+            script: '  osSetDynamicTextureDataFace();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osSetDynamicTextureURL [string:Variable]',
+            script: '  osSetDynamicTextureURL();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetDynamicTextureURLBlend [string:Variable]',
+            script: '  osSetDynamicTextureURLBlend();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetDynamicTextureURLBlendFace [string:Variable]',
+            script: '  osSetDynamicTextureURLBlendFace();//  Erklaerung im Skript\n'
+        }
+     ]),
+
+    functions: menu('Notecard', [
+		{
+            label: 'osGetNotecard [string:Variable]',
+            script: '  osGetNotecard();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetNotecardLine [string:Variable]',
+            script: '  osGetNotecardLine();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetNumberOfNotecardLines [string:Variable]',
+            script: '  osGetNumberOfNotecardLines();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osMakeNotecard [string:Variable]',
+            script: '  osMakeNotecard();//  Erklaerung im Skript\n'
+        }
+     ]),
+
+    functions: menu('Sound', [
+		{
+            label: 'osAdjustSoundVolume [string:Variable]',
+            script: '  osAdjustSoundVolume();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osCollisionSound [string:Variable]',
+            script: '  osCollisionSound();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osLoopSound [string:Variable]',
+            script: '  osLoopSound();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osLoopSoundMaster [string:Variable]',
+            script: '  osLoopSoundMaster();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osLoopSoundSlave [string:Variable]',
+            script: '  osLoopSoundSlave();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osPlaySound [string:Variable]',
+            script: '  osPlaySound();//  Erklaerung im Skript\n'
+        },  
+		{
+            label: 'osPlaySoundSlave [string:Variable]',
+            script: '  osPlaySoundSlave();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osPreloadSound [string:Variable]',
+            script: '  osPreloadSound();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osSetSoundRadius [string:Variable]',
+            script: '  osSetSoundRadius();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osStopSound [string:Variable]',
+            script: '  osStopSound();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osTriggerSound [string:Variable]',
+            script: '  osTriggerSound();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osTriggerSoundLimited [string:Variable]',
+            script: '  osTriggerSoundLimited();//  Erklaerung im Skript\n'
+        }
+     ]),
+
+    functions: menu('HTTP', [
+		{
+            label: 'osRequestSecureURL [string:Variable]',
+            script: '  osRequestSecureURL();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osRequestURL [string:Variable]',
+            script: '  osRequestURL();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetContentType [string:Variable]',
+            script: '  osSetContentType();//  Erklaerung im Skript\n'
+        }
+     ]),
+	 
+    functions: menu('Parcel', [
+		{
+            label: 'osParcelJoin [string:Variable]',
+            script: '  osParcelJoin();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osParcelSubdivide [string:Variable]',
+            script: '  osParcelSubdivide();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetParcelDetails [string:Variable]',
+            script: '  osSetParcelDetails();//  Erklaerung im Skript\n'
+        }
+     ]),
+    functions: menu('Terrain', [
+
+		{
+            label: 'osGetTerrainHeight [string:Variable]',
+            script: '  osGetTerrainHeight();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetTerrainHeight [string:Variable]',
+            script: '  osSetTerrainHeight();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetTerrainTexture [string:Variable]',
+            script: '  osSetTerrainTexture();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetTerrainTextureHeight [string:Variable]',
+            script: '  osSetTerrainTextureHeight();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osTerrainFlush [string:Variable]',
+            script: '  osTerrainFlush();//  Erklaerung im Skript\n'
+        }
+     ]), 
+
+    functions: menu('WindLight', [
+		{
+            label: 'osGetCurrentSunHour [string:Variable]',
+            script: '  osGetCurrentSunHour();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetSunParam [string:Variable]',
+            script: '  osGetSunParam();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetWindParam [string:Variable]',
+            script: '  osGetWindParam();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetEstateSunSettings [string:Variable]',
+            script: '  osSetEstateSunSettings();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetRegionSunSettings [string:Variable]',
+            script: '  osSetRegionSunSettings();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osSetRegionWaterHeight [string:Variable]',
+            script: '  osSetRegionWaterHeight();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetSunParam [string:Variable]',
+            script: '  osSetSunParam();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetWindParam [string:Variable]',
+            script: '  osSetWindParam();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osWindActiveModelPluginName [string:Variable]',
+            script: '  osWindActiveModelPluginName();//  Erklaerung im Skript\n'
+        }
+     ]),
+
+    functions: menu('GridRegion', [
+		{
+            label: 'osCheckODE [string:Variable]',
+            script: '  osCheckODE();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetGridCustom [string:Variable]',
+            script: '  osGetGridCustom();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetGridGatekeeperURI [string:Variable]',
+            script: '  osGetGridGatekeeperURI();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetGridHomeURI [string:Variable]',
+            script: '  osGetGridHomeURI();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetGridLoginURI [string:Variable]',
+            script: '  osGetGridLoginURI();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetGridName [string:Variable]',
+            script: '  osGetGridName();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetGridNick [string:Variable]',
+            script: '  osGetGridNick();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetMapTexture [string:Variable]',
+            script: '  osGetMapTexture();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetPhysicsEngineName [string:Variable]',
+            script: '  osGetPhysicsEngineName();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetPhysicsEngineType [string:Variable]',
+            script: '  osGetPhysicsEngineType();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osGetRegionMapTexture [string:Variable]',
+            script: '  osGetRegionMapTexture();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetRegionSize [string:Variable]',
+            script: '  osGetRegionSize();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetRegionStats [string:Variable]',
+            script: '  osGetRegionStats();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetScriptEngineName [string:Variable]',
+            script: '  osGetScriptEngineName();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetSimulatorMemory [string:Variable]',
+            script: '  osGetSimulatorMemory();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osGetSimulatorMemoryKB [string:Variable]',
+            script: '  osGetSimulatorMemoryKB();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osGetSimulatorVersion [string:Variable]',
+            script: '  osGetSimulatorVersion();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osLoadedCreationDate [string:Variable]',
+            script: '  osLoadedCreationDate();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osLoadedCreationID [string:Variable]',
+            script: '  osLoadedCreationID();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osLoadedCreationTime [string:Variable]',
+            script: '  osLoadedCreationTime();//  Erklaerung im Skript\n'
+        }
+     ]),
+
+    functions: menu('Administration', [
+		{
+            label: 'osConsoleCommand [string:Variable]',
+            script: '  osConsoleCommand();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osRegionNotice [string:Variable]',
+            script: '  osRegionNotice();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osRegionRestart [string:Variable]',
+            script: '  osRegionRestart();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetParcelMediaURL [string:Variable]',
+            script: '  osSetParcelMediaURL();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetParcelSIPAddress [string:Variable]',
+            script: '  osSetParcelSIPAddress();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osSetPrimFloatOnWater [string:Variable]',
+            script: '  osSetPrimFloatOnWater();//  Erklaerung im Skript\n'
+        }
+     ]),
+
+    functions: menu('Permissions', [
+		{
+            label: 'osGrantScriptPermissions [string:Variable]',
+            script: '  osGrantScriptPermissions();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osRevokeScriptPermissions [string:Variable]',
+            script: '  osRevokeScriptPermissions();//  Erklaerung im Skript\n'
+        }
+     ]),
+
+    functions: menu('String', [
+		{
+            label: 'osFormatString [string:Variable]',
+            script: '  osFormatString();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osMatchString [string:Variable]',
+            script: '  osMatchString();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osRegexIsMatch [string:Variable]',
+            script: '  osRegexIsMatch();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osReplaceString [string:Variable]',
+            script: '  osReplaceString();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osStringSubString [string:Variable]',
+            script: '  osStringSubString();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osStringStartsWith [string:Variable]',
+            script: '  osStringStartsWith();//  Erklaerung im Skript\n'
+        },  
+		{
+            label: 'osStringEndsWith [string:Variable]',
+            script: '  osStringEndsWith();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osStringIndexOf [string:Variable]',
+            script: '  osStringIndexOf();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osStringLastIndexOf [string:Variable]',
+            script: '  osStringLastIndexOf();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osStringRemove [string:Variable]',
+            script: '  osStringRemove();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osStringReplace [string:Variable]',
+            script: '  osStringReplace();//  Erklaerung im Skript\n'
+        }
+     ]),
+
+    functions: menu('Misc', [
+		{
+            label: 'osAngleBetween [string:Variable]',
+            script: '  osAngleBetween();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osApproxEquals [string:Variable]',
+            script: '  osApproxEquals();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osDie',
+             slot: false,
+            script: '  osDie(); // Program and primitive will disappear\n'
+        }, 
+		{
+            label: 'osIsUUID [string:Variable]',
+            script: '  osIsUUID();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osKey2Name [string:Variable]',
+            script: '  osKey2Name();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osList2Double [string:Variable]',
+            script: '  osList2Double();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osMax [string:Variable]',
+            script: '  osMax();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osMin [string:Variable]',
+            script: '  osMin();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osRound [string:Variable]',
+            script: '  osRound();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osUnixTimeToTimestamp [string:Variable]',
+            script: '  osUnixTimeToTimestamp();//  Erklaerung im Skript\n'
+        },
+		{
+            label: 'osVecDistSquare [string:Variable]',
+            script: '  osVecDistSquare();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osVecMagSquare [string:Variable]',
+            script: '  osVecMagSquare();//  Erklaerung im Skript\n'
+        }, 
+		{
+            label: 'osVolumeDetect [string:Variable]',
+            script: '  osVolumeDetect();//  Erklaerung im Skript\n'
+        }  
      ])
+	
+	 
  };
 
 })();
