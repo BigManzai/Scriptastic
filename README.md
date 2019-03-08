@@ -17,6 +17,28 @@ Testing insert OSSL.
 * stylesheets/blocks.css - contains the Block shapes
 * stylesheets/raphael_demo.css  - contains the Block & Boarder colors
 
+# TODO
+Step 1 Insert all ossl OK
+
+Step 2 Insert all Parameters for
+      Avatars
+      NPCs
+      Prim Manipulation
+      Prim Drawing / Dynamic Texture
+      Notecard
+      Sound
+      HTTP
+      Parcel
+      Terrain
+      WindLight
+      Grid / Region Information
+      Administration
+      Script Permissions
+      String Functions
+      Misc
+      
+
+
 # Inserts
 
 // Avatars
