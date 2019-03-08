@@ -18,7 +18,7 @@ Testing insert OSSL.
 * stylesheets/raphael_demo.css  - contains the Block & Boarder colors
 
 # TODO
-Step 1 Insert all ossl OK
+Step 1 Insert all ossl === OK ===
 
 Step 2 Insert all Parameters for
 * Avatars
