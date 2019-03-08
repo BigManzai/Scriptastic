@@ -852,51 +852,51 @@ var menus = {
     functions: menu('Sound', [
 		{
             label: 'osAdjustSoundVolume: linknum [number:2] volume [string: 1.0]',
-            script: '  osAdjustSoundVolume("{{1}}","{{2}}"); //Adjust the volume of attached sound for a prim in a linkset.\n'
+            script: '  osAdjustSoundVolume({{1}},{{2}}); //Adjust the volume of attached sound for a prim in a linkset.\n'
         }, 
 		{
             label: 'osCollisionSound: sound [string:SomeSoundName] volume [string: 1.0]',
-            script: '  osCollisionSound("{{1}}","{{2}}"); //Sets collision sound to impact_sound with specified volume.\n'
+            script: '  osCollisionSound("{{1}}",{{2}}); //Sets collision sound to impact_sound with specified volume.\n'
         }, 
 		{
-            label: 'os Loop Sound named: [string:SomeSoundName] volume [string: 1.0]',
-            script: '  osLoopSound("{{1}}","{{2}}");// Loop Sound Play, full volume = 1.0\n'
+            label: 'osLoopSound:linknum [number:2] [string:SomeSoundName] volume [string: 1.0]',
+            script: '  osLoopSound({{1}},"{{2}}",{{3}});// Loop Sound Play, full volume = 1.0\n'
         }, 
 		{
             label: 'osLoopSoundMaster linknum [number:2] [string:SomeSoundName] volume [string: 1.0]',
-            script: '  osLoopSoundMaster("{{1}}","{{2}}","{{3}}");  //Play the specified sound at the specified volume and loop it indefinitely.\n'
+            script: '  osLoopSoundMaster({{1}},"{{2}}",{{3}});  //Play the specified sound at the specified volume and loop it indefinitely.\n'
         }, 
 		{
             label: 'osLoopSoundSlave: linknum [number:2] [string:SomeSoundName] volume [string: 1.0]',
-            script: '  osLoopSoundSlave("{{1}}","{{2}}","{{3}}");  //Play the specified sound at the specified volume and loop it indefinitely.\n'
+            script: '  osLoopSoundSlave({{1}},"{{2}}",{{3}});  //Play the specified sound at the specified volume and loop it indefinitely.\n'
         }, 
 		{
             label: 'osPlaySound: linknum [number:2] [string:SomeSoundName] volume [string: 1.0]',
-            script: '  osPlaySound("{{1}}","{{2}}","{{3}}"); //Play the specified sound once at the specified volume.\n'
+            script: '  osPlaySound({{1}},"{{2}}",{{3}}); //Play the specified sound once at the specified volume.\n'
         },  
 		{
             label: 'osPlaySoundSlave: linknum [number:2] [string:SomeSoundName] volume [string: 1.0]',
-            script: '  osPlaySoundSlave("{{1}}","{{2}}","{{3}}"); //Play the specified sound at the specified volume and loop it indefinitely.\n'
+            script: '  osPlaySoundSlave({{1}},"{{2}}",{{3}}); //Play the specified sound at the specified volume and loop it indefinitely.\n'
         }, 
 		{
             label: 'osPreloadSound: linknum [number:2] [string:SomeSoundName]',
-            script: '  osPreloadSound("{{1}}","{{2}}");  //Preload the specified sound in viewers of nearby avatars.\n'
+            script: '  osPreloadSound({{1}},"{{2}}");  //Preload the specified sound in viewers of nearby avatars.\n'
         }, 
 		{
             label: 'osSetSoundRadius: linknum [number:2] radius[string: 1.0]',
-            script: '  osSetSoundRadius("{{1}}","{{2}}");  //Establishes a hard cut-off radius for audibility of scripted sounds (both attached and triggered) in the specified prim of a linkset.\n'
+            script: '  osSetSoundRadius({{1}},{{2}});  //Establishes a hard cut-off radius for audibility of scripted sounds (both attached and triggered) in the specified prim of a linkset.\n'
         }, 
 		{
             label: 'osStopSound: linknum [number:2]',
-            script: '  osStopSound("{{1}}"); //Stop the sound playing in the specified prim of a linkset. \n'
+            script: '  osStopSound({{1}}); //Stop the sound playing in the specified prim of a linkset. \n'
         }, 
 		{
             label: 'osTriggerSound: linknum [number:2] [string:SomeSoundName] volume [string: 1.0]',
-            script: '  osTriggerSound("{{1}}","{{2}}","{{3}}");  //Start playing the specified sound in the viewers of nearby avatars once at the specified volume. \n'
+            script: '  osTriggerSound({{1}},"{{2}}",{{3}});  //Start playing the specified sound in the viewers of nearby avatars once at the specified volume. \n'
         }, 
 		{
             label: 'osTriggerSoundLimited: linknum [number:2] [string:SomeSoundName] volume [string: 1.0] vector north east corner [string: <30,30,22>]  vector south west corner [string: <50,50,30>]',
-            script: '  osTriggerSoundLimited("{{1}}","{{2}}","{{3}}",{{4}},{{5}});//  Erklaerung im Skript\n'
+            script: '  osTriggerSoundLimited({{1}},"{{2}}",{{3}},{{4}},{{5}});  //Start a one time play of the specified sound once at the specified volume in the viewers of avatars located within the box defined by the two vectors.\n'
         }
      ]),
 
