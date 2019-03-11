@@ -851,7 +851,7 @@ var menus = {
 
     functions: menu('Sound', [
 		{
-            label: 'osAdjustSoundVolume: linknum [number:2] volume [string: 1.0]',
+            label: 'osAdjustSoundVolume: linknum [number:1] volume [string: 1.0]',
             script: '  osAdjustSoundVolume({{1}},{{2}}); //Adjust the volume of attached sound for a prim in a linkset.\n'
         }, 
 		{
@@ -859,74 +859,74 @@ var menus = {
             script: '  osCollisionSound("{{1}}",{{2}}); //Sets collision sound to impact_sound with specified volume.\n'
         }, 
 		{
-            label: 'osLoopSound:linknum [number:2] [string:SomeSoundName] volume [string: 1.0]',
+            label: 'osLoopSound:linknum [number:1] [string:SomeSoundName] volume [string: 1.0]',
             script: '  osLoopSound({{1}},"{{2}}",{{3}});// Loop Sound Play, full volume = 1.0\n'
         }, 
 		{
-            label: 'osLoopSoundMaster linknum [number:2] [string:SomeSoundName] volume [string: 1.0]',
+            label: 'osLoopSoundMaster linknum [number:1] [string:SomeSoundName] volume [string: 1.0]',
             script: '  osLoopSoundMaster({{1}},"{{2}}",{{3}});  //Play the specified sound at the specified volume and loop it indefinitely.\n'
         }, 
 		{
-            label: 'osLoopSoundSlave: linknum [number:2] [string:SomeSoundName] volume [string: 1.0]',
+            label: 'osLoopSoundSlave: linknum [number:1] [string:SomeSoundName] volume [string: 1.0]',
             script: '  osLoopSoundSlave({{1}},"{{2}}",{{3}});  //Play the specified sound at the specified volume and loop it indefinitely.\n'
         }, 
 		{
-            label: 'osPlaySound: linknum [number:2] [string:SomeSoundName] volume [string: 1.0]',
+            label: 'osPlaySound: linknum [number:1] [string:SomeSoundName] volume [string: 1.0]',
             script: '  osPlaySound({{1}},"{{2}}",{{3}}); //Play the specified sound once at the specified volume.\n'
         },  
 		{
-            label: 'osPlaySoundSlave: linknum [number:2] [string:SomeSoundName] volume [string: 1.0]',
+            label: 'osPlaySoundSlave: linknum [number:1] [string:SomeSoundName] volume [string: 1.0]',
             script: '  osPlaySoundSlave({{1}},"{{2}}",{{3}}); //Play the specified sound at the specified volume and loop it indefinitely.\n'
         }, 
 		{
-            label: 'osPreloadSound: linknum [number:2] [string:SomeSoundName]',
+            label: 'osPreloadSound: linknum [number:1] [string:SomeSoundName]',
             script: '  osPreloadSound({{1}},"{{2}}");  //Preload the specified sound in viewers of nearby avatars.\n'
         }, 
 		{
-            label: 'osSetSoundRadius: linknum [number:2] radius[string: 1.0]',
+            label: 'osSetSoundRadius: linknum [number:1] radius[string: 1.0]',
             script: '  osSetSoundRadius({{1}},{{2}});  //Establishes a hard cut-off radius for audibility of scripted sounds (both attached and triggered) in the specified prim of a linkset.\n'
         }, 
 		{
-            label: 'osStopSound: linknum [number:2]',
+            label: 'osStopSound: linknum [number:1]',
             script: '  osStopSound({{1}}); //Stop the sound playing in the specified prim of a linkset. \n'
         }, 
 		{
-            label: 'osTriggerSound: linknum [number:2] [string:SomeSoundName] volume [string: 1.0]',
+            label: 'osTriggerSound: linknum [number:1] [string:SomeSoundName] volume [string: 1.0]',
             script: '  osTriggerSound({{1}},"{{2}}",{{3}});  //Start playing the specified sound in the viewers of nearby avatars once at the specified volume. \n'
         }, 
 		{
-            label: 'osTriggerSoundLimited: linknum [number:2] [string:SomeSoundName] volume [string: 1.0] vector north east corner [string: <30,30,22>]  vector south west corner [string: <50,50,30>]',
+            label: 'osTriggerSoundLimited: linknum [number:1] [string:SomeSoundName] volume [string: 1.0] vector north east corner [string: <30,30,22>]  vector south west corner [string: <50,50,30>]',
             script: '  osTriggerSoundLimited({{1}},"{{2}}",{{3}},{{4}},{{5}});  //Start a one time play of the specified sound once at the specified volume in the viewers of avatars located within the box defined by the two vectors.\n'
         }
      ]),
 
     functions: menu('HTTP', [
 		{
-            label: 'osRequestSecureURL [string:Variable]',
-            script: '  osRequestSecureURL();//  Erklaerung im Skript\n'
+            label: 'osRequestSecureURL: [string:allowXss]',
+            script: '  osRequestSecureURL([ "allowXss" ]);  //  Option supported :allowXss - Add Access-Control-Allow-Origin: to response header\n'
         },
 		{
-            label: 'osRequestURL [string:Variable]',
-            script: '  osRequestURL();//  Erklaerung im Skript\n'
+            label: 'osRequestURL: [string:allowXss]',
+            script: '  osRequestURL([ "allowXss" ]);  //  Option supported :allowXss - Add Access-Control-Allow-Origin: to response header\n'
         },
 		{
-            label: 'osSetContentType [string:Variable]',
-            script: '  osSetContentType();//  Erklaerung im Skript\n'
+            label: 'osSetContentType: key [number:1] string [string:type]',
+            script: '  osSetContentType({{1}},"{{2}}");  //  Sets an arbitrary content return type for an llRequestUrl()\n'
         }
      ]),
 	 
     functions: menu('Parcel', [
 		{
-            label: 'osParcelJoin [string:Variable]',
-            script: '  osParcelJoin();//  Erklaerung im Skript\n'
+            label: 'osParcelJoin: vector start[string:<0.0, 0.0, 0.0>] vector end[string:<100.0, 100.0, 0.0>]',
+            script: '  osParcelJoin({{1}},{{2}});  //  Joins two adjacent parcels within the same region. \n'
         },
 		{
-            label: 'osParcelSubdivide [string:Variable]',
-            script: '  osParcelSubdivide();//  Erklaerung im Skript\n'
+            label: 'osParcelSubdivide: vector start[string:<0.0, 0.0, 0.0>] vector end[string:<100.0, 100.0, 0.0>]',
+            script: '  osParcelSubdivide({{1}},{{2}});//  Subdivides a parcel into two adjacent parcels within the same region.\n'
         },
 		{
-            label: 'osSetParcelDetails [string:Variable]',
-            script: '  osSetParcelDetails();//  Erklaerung im Skript\n'
+            label: 'osSetParcelDetails: vector pos[string:<0.0, 0.0, 0.0>] list rules[string:PARCEL_DETAILS_OWNER]',
+            script: '  osSetParcelDetails({{1}},{{2}});//  This function is the counterpart to llGetParcelDetails\n'
         }
      ]),
     functions: menu('Terrain', [
@@ -1104,19 +1104,19 @@ var menus = {
 
     functions: menu('Permissions', [
 		{
-            label: 'osGrantScriptPermissions [string:Variable]',
-            script: '  osGrantScriptPermissions();//  Erklaerung im Skript\n'
+            label: 'osGrantScriptPermissions: allowed_key[number:1] function[string:Variable]',
+            script: '  osGrantScriptPermissions({{1}},"{{2}}"); //  Dynamically allow ossl execution to owner/creator/group by function name.\n'
         },
 		{
-            label: 'osRevokeScriptPermissions [string:Variable]',
-            script: '  osRevokeScriptPermissions();//  Erklaerung im Skript\n'
+            label: 'osRevokeScriptPermissions: revoked_key[number:1] function[string:Variable]',
+            script: '  osRevokeScriptPermissions({{1}},"{{2}}"); //  Dynamically allow/disallow ossl execution to owner/creator/group by function name.\n'
         }
      ]),
 
     functions: menu('String', [
 		{
-            label: 'osFormatString [string:Variable]',
-            script: '  osFormatString();//  Erklaerung im Skript\n'
+            label: 'osFormatString format[string:format] params[string:params]',
+            script: '  osFormatString("{{1}}","{{2}}"); //  Return the string with parameters substituted into it.\n'
         },
 		{
             label: 'osMatchString [string:Variable]',
