@@ -1,5 +1,11 @@
 # Scriptastic
-Scripting for Opensim on a web page - Like Scratch, but with no download needed
+Scripting for Opensim on a web page - Like Scratch, but with no download needed.
+
+Canceled.
+
+Opportunities are too limited. Scriptastic does not have an editor for this. 
+
+The effort is too high for the benefit.
 
 Testing insert OSSL.
 
